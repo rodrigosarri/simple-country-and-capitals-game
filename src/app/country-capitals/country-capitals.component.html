@@ -1,0 +1,13 @@
+<div id="game" *ngIf="buttons.length > 0">
+  <ng-container *ngFor="let button of buttons">
+    <button
+      type="button"
+      (click)="check(button.title)"
+      [class.active]="button.selected"
+      [class.error]="button.error"
+      *ngIf="!button.hit"
+    >
+      {{ button.title }}
+    </button>
+  </ng-container>
+</div>
